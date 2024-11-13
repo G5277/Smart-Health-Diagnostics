@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Healthcare Diagnosis</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Submit the following details</h1>
+        </header>
+        <main>
+            <form action = "/" method="POST">
+                <div class = "form-group">
+                
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required><br><br>
+
+                    <label for="gender">Gender:</label>
+                    <input type="text" id="gender" name="gender" required><br><br>
+
+                    <label for="bmi">BMI:</label>
+                    <input type="number" id="bmi" name="bmi" required><br><br>
+
+                    <label for="systolic_bp">Systolic BP:</label>
+                    <input type="number" id="systolic_bp" name="systolic_bp" required><br><br>
+
+                    <label for="diastolic_bp">Diastolic BP:</label>
+                    <input type="number" id="diastolic_bp" name="diastolic_bp" required><br><br>
+
+                    <label for="fasting_blood_sugar">Fasting Blood Sugar:</label>
+                    <input type="number" id="fasting_blood_sugar" name="fasting_blood_sugar" required><br><br>
+                
+                </div>
+
+                <div class = "form-group">
+                
+                    <h3>Choose for the relevant disease categories:</h3>
+                    <label for="heart_related">Heart Related:</label>
+                    <select id="heart_related" name="heart_related" required>
+                        <option value="None">None</option>
+                        <option value="FamIss">Family Issue</option>
+                        <option value="PrevSigns">Previous Signs</option>
+                    </select><br><br>
+                
+                    <label for="liver_related">Liver Related:</label>
+                    <select id="liver_related" name="liver_related" required>
+                        <option value="None">None</option>
+                        <option value="FamIss">Family Issue</option>
+                        <option value="PrevSigns">Previous Signs</option>
+                    </select><br><br>
+                
+                    <label for="kidney_related">Kidney Related:</label>
+                    <select id="kidney_related" name="kidney_related" required>
+                        <option value="None">None</option>
+                        <option value="FamIss">Family Issue</option>
+                        <option value="PrevSigns">Previous Signs</option>
+                    </select><br><br>
+                
+                    <label for="lung_related">Lung Related:</label>
+                    <select id="lung_related" name="lung_related" required>
+                        <option value="None">None</option>
+                        <option value="FamIss">Family Issue</option>
+                        <option value="PrevSigns">Previous Signs</option>
+                    </select><br><br>
+                
+                    <label for="mental_health_related">Mental Health Related:</label>
+                    <select id="mental_health_related" name="mental_health_related" required>
+                        <option value="None">None</option>
+                        <option value="FamIss">Family Issue</option>
+                        <option value="PrevSigns">Previous Signs</option>
+                    </select><br><br>
+                
+                </div>
+            
+                <div class = "form-group">
+                
+                    <label for="smoking_status">Smoking Status:</label>
+                    <select id="smoking_status" name="smoking_status" required>
+                        <option value="True">True</option>
+                        <option value="False">False</option>
+                    </select><br><br>
+                
+                    <label for="alcohol_consumption">Alcohol Consumption:</label>
+                    <select id="alcohol_consumption" name="alcohol_consumption" required>
+                        <option value="Light">Light</option>
+                        <option value="Moderate">Moderate</option>
+                        <option value="None">None</option>
+                    </select><br><br>
+                
+                    <label for="physical_activity">Physical Activity:</label>
+                    <select id="physical_activity" name="physical_activity" required>
+                        <option value="Light">Light</option>
+                        <option value="Sedentary">Sedentary</option>
+                        <option value="Active">Active</option>
+                    
+                    </select><br><br>
+                
+                    <label for="diet">Diet:</label>
+                    <select id="diet" name="diet" required>
+                        <option value="Good">Good</option>
+                        <option value="Poor">Poor</option>
+                        <option value="Average">Average</option>
+                    </select><br><br>
+                
+                    <label for="mental_wellbeing">Mental Wellbeing:</label>
+                    <select id="mental_wellbeing" name="mental_wellbeing" required>
+                        <option value="Good">Good</option>
+                        <option value="Moderate">Moderate</option>
+                        <option value="Bad">Bad</option>
+                    </select><br><br>
+                
+                </div>
+            
+                <input type="submit" value="Submit">
+            </form>
+        {% if prediction %}
+                <div class="disease-catergory">
+                    <h2>Prediction: {{ prediction }}</h2>
+                </div>
+        {% endif %}
+        </main>
+    </div>
+</body>
+</html>
