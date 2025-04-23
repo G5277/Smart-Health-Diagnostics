@@ -1,3 +1,5 @@
+import xgboost as xgb
+from tensorflow.keras.models import load_model
 from flask import Flask, request, render_template, jsonify
 import numpy as np
 
@@ -17,7 +19,6 @@ def load_meta_model():
     except Exception as e:
         print(f"An error occurred while loading the model: {e}")
 
-from tensorflow.keras.models import load_model # type: ignore
 def load_ann_model():
     try:
         # Load the Keras model
@@ -29,7 +30,6 @@ def load_ann_model():
     except Exception as e:
         print(f"An error occurred while loading the ANN model: {e}")
 
-import xgboost as xgb
 def load_xgb_model():
     try:
         model = xgb.Booster()
